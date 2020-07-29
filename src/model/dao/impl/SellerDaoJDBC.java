@@ -148,7 +148,7 @@ public class SellerDaoJDBC implements SellerDao {
 		sel.setName(rs.getString("Name"));
 		sel.setEmail(rs.getString("Email"));
 		sel.setDepartment(dep);
-		sel.setBirthDate(rs.getDate("BirthDate"));
+		sel.setBirthDate(new java.util.Date(rs.getTimestamp("BirthDate").getTime()));
 		sel.setBaseSalary(rs.getDouble("BaseSalary"));
 		return sel;
 	}
